@@ -23,9 +23,37 @@ const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
+const createTopTabs = () => {
+  return (
+    <MaterialTopTabs.Navigator>
+      <MaterialTopTabs.Screen
+        name="Tab 1"
+        component={Tab1}
+        options={{title: 'Hello'}}
+      />
+      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
+      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
+    </MaterialTopTabs.Navigator>
+  );
+};
+
+const createBottomTabs = () => {
+  return (
+    <MaterialBottomTabs.Navigator>
+      <MaterialBottomTabs.Screen name="Tab 1" component={Tab1} />
+      <MaterialBottomTabs.Screen name="Tab 2" component={Tab2} />
+      <MaterialBottomTabs.Screen name="Tab 3" component={Tab3} />
+    </MaterialBottomTabs.Navigator>
+  );
+};
+
+// Object Navigation
 const createHomeStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="feed" component={Feed} />
+    <Stack.Screen name="feed" component={Feed} options={{title: 'My Feed', headerStyle:{ backgroundColor: 'black', headerTintColor: 'yellow'}}} />
+    <Stack.Screen name="detail" component={Detail} options={{title: 'Detail Screen', headerStyle:{ backgroundColor: 'blue', headerTintColor: 'yellow'}}} />
+    <Stack.Screen name="toptabs" children={createTopTabs} />
+    <Stack.Screen name="bottomtabs" children={createBottomTabs} />
   </Stack.Navigator>
 );
 

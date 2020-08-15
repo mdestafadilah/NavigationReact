@@ -3,12 +3,15 @@ import {View, Text, Button} from 'react-native';
 
 import {styles} from './styles/styles';
 
-const Feed = () => {
+const Feed = props => {
   return (
     <>
       <View style={styles.center}>
         <Text style={styles.title}>Navigation React</Text>
-        <Button title="Go to Feed Item" onPress={() => {}} />
+        <Button
+          title="Go to Feed Item"
+          onPress={() => props.navigation.navigate('detail', {screenName: "My Detail Screen"})}
+        />
       </View>
     </>
   );
