@@ -23,16 +23,26 @@ const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
-const createTopTabs = () => {
+// eslint-disable-next-line prettier/prettier
+const createTopTabs = props => {
+  console.log(props);
   return (
     <MaterialTopTabs.Navigator>
       <MaterialTopTabs.Screen
         name="Tab 1"
         component={Tab1}
-        options={{title: 'Hello'}}
+        options={{title: props.route.params.name}}
       />
-      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
-      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
+      <MaterialTopTabs.Screen
+        name="Tab 2"
+        component={Tab2}
+        options={{title: props.route.params.name}}
+      />
+      <MaterialTopTabs.Screen
+        name="Tab 3"
+        component={Tab3}
+        options={{title: props.route.params.name}}
+      />
     </MaterialTopTabs.Navigator>
   );
 };
@@ -70,7 +80,7 @@ const createHomeStack = () => (
       options={{
         title: 'Detail Screen',
         headerStyle: {
-          backgroundColor: '#f4511e',
+          backgroundColor: 'blue',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
