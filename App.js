@@ -50,8 +50,34 @@ const createBottomTabs = () => {
 // Object Navigation
 const createHomeStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="feed" component={Feed} options={{title: 'My Feed', headerStyle:{ backgroundColor: 'black', headerTintColor: 'yellow'}}} />
-    <Stack.Screen name="detail" component={Detail} options={{title: 'Detail Screen', headerStyle:{ backgroundColor: 'blue', headerTintColor: 'yellow'}}} />
+    <Stack.Screen
+      name="feed"
+      component={Feed}
+      options={{
+        title: 'My Feed',
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    />
+    <Stack.Screen
+      name="detail"
+      component={Detail}
+      options={{
+        title: 'Detail Screen',
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    />
     <Stack.Screen name="toptabs" children={createTopTabs} />
     <Stack.Screen name="bottomtabs" children={createBottomTabs} />
   </Stack.Navigator>
