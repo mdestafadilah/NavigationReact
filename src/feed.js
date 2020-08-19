@@ -1,10 +1,13 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {styles} from './styles/styles';
 
 // eslint-disable-next-line prettier/prettier
 const Feed = props => {
+  const navigation = useNavigation();
+
   return (
     <>
       <View style={styles.center}>
@@ -12,7 +15,7 @@ const Feed = props => {
         <Button
           title="Go to Feed Item"
           onPress={() =>
-            props.navigation.navigate('detail', {
+            navigation.navigate('detail', {
               screenName: 'My Detail Screen',
             })
           }

@@ -25,7 +25,6 @@ const MaterialTopTabs = createMaterialTopTabNavigator();
 
 // eslint-disable-next-line prettier/prettier
 const createTopTabs = props => {
-  console.log(props);
   return (
     <MaterialTopTabs.Navigator>
       <MaterialTopTabs.Screen
