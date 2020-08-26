@@ -24,7 +24,7 @@ const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
 // eslint-disable-next-line prettier/prettier
-const createTopTabs = props => {
+const createTopTabs = (props) => {
   return (
     <MaterialTopTabs.Navigator>
       <MaterialTopTabs.Screen
@@ -97,9 +97,6 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Feed" children={createHomeStack} />
-        <Drawer.Screen name="Contact" component={Screen1} />
-        <Drawer.Screen name="Favorite" component={Screen2} />
-        <Drawer.Screen name="Settings" component={Screen3} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

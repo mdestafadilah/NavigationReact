@@ -10,20 +10,22 @@ import {
 import {styles} from './styles/styles';
 
 // eslint-disable-next-line prettier/prettier
-const Detail = props => {
+const Detail = (props) => {
   const navigation = useNavigation();
   const route = useRoute();
-  const index = useNavigationState(state => state.index);
+  const index = useNavigationState((state) => state.index);
 
   console.log(`Screen Index:${index}`);
 
   useFocusEffect(
     useCallback(() => {
-      fetch('https://restcountries.eu/rest/v2/region/europe').then(response => {
-        response.json().then(data => {
-          // console.log(data);
-        });
-      });
+      fetch('https://restcountries.eu/rest/v2/region/europe').then(
+        (response) => {
+          response.json().then((data) => {
+            // console.log(data);
+          });
+        },
+      );
       return () => console.log('lost focus');
     }),
   );

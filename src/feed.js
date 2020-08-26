@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles/styles';
 
 // eslint-disable-next-line prettier/prettier
-const Feed = props => {
+const Feed = (props) => {
   const navigation = useNavigation();
 
   return (
